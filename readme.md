@@ -1,6 +1,6 @@
-AES 算法基于 Java 实战演示，具体实现请看代码
+Java 常用工具类，开箱即用。
 
-使用方法如下：
+AES 算法使用方法如下：
 
 ```java
 public class AESCryptoTest {
