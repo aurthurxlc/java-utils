@@ -1,6 +1,6 @@
 package cn.aurthur.utils;
 
-import com.bqteam.basetool.sdk.core.lang.pool.EmptyPool;
+import cn.aurthur.lang.pool.EmptyPool;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -96,6 +96,7 @@ public abstract class ObjectUtil {
      * 比较两个对象是否完全相等。
      * <div>
      * 此方法可以正确地比较多维数组。
+     * 
      * <pre>
      * ObjectUtil.equals(null, null)                  = true
      * ObjectUtil.equals(null, "")                    = false
@@ -106,6 +107,7 @@ public abstract class ObjectUtil {
      * ObjectUtil.equals(Boolean.TRUE, Boolean.TRUE)  = true
      * ObjectUtil.equals(Boolean.TRUE, Boolean.FALSE) = false
      * </pre>
+     * 
      * </div>
      *
      * @param object1 对象1
@@ -269,7 +271,8 @@ public abstract class ObjectUtil {
     // ==========================================================================
 
     /**
-     * 取得对象的<code>toString()</code>的值，如果对象为<code>null</code>，则返回空字符串 <code>""</code>。
+     * 取得对象的<code>toString()</code>的值，如果对象为<code>null</code>，则返回空字符串
+     * <code>""</code>。
      * <br>
      *
      * <pre>

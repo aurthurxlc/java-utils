@@ -1,6 +1,6 @@
 package cn.aurthur.utils;
 
-import com.bqteam.basetool.sdk.core.lang.pool.EmptyPool;
+import cn.aurthur.lang.pool.EmptyPool;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -114,7 +114,8 @@ public abstract class StringUtil {
      * 判断字符串是否只包含unicode字母。
      *
      * <div>
-     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回 <code>true</code>。
+     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回
+     * <code>true</code>。
      * </div>
      *
      * <pre>
@@ -149,7 +150,8 @@ public abstract class StringUtil {
      * 判断字符串是否只包含unicode字母和空格<code>' '</code>。
      *
      * <div>
-     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回 <code>true</code>。
+     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回
+     * <code>true</code>。
      * </div>
      *
      * <pre>
@@ -185,7 +187,8 @@ public abstract class StringUtil {
      * 判断字符串是否只包含unicode字母和数字。
      *
      * <div>
-     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回 <code>true</code>。
+     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回
+     * <code>true</code>。
      * </div>
      *
      * <pre>
@@ -221,7 +224,8 @@ public abstract class StringUtil {
      * 判断字符串是否只包含unicode字母数字和空格<code>' '</code>。
      *
      * <div>
-     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回 <code>true</code>。
+     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回
+     * <code>true</code>。
      * </div>
      *
      * <pre>
@@ -257,7 +261,8 @@ public abstract class StringUtil {
      * 判断字符串是否只包含unicode数字。
      *
      * <div>
-     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回 <code>true</code>。
+     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回
+     * <code>true</code>。
      * </div>
      *
      * <pre>
@@ -294,7 +299,8 @@ public abstract class StringUtil {
      * 判断字符串是否只包含unicode数字和空格<code>' '</code>。
      *
      * <div>
-     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回 <code>true</code>。
+     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回
+     * <code>true</code>。
      * </div>
      *
      * <pre>
@@ -331,7 +337,8 @@ public abstract class StringUtil {
      * 判断字符串是否只包含unicode空白。
      *
      * <div>
-     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回 <code>true</code>。
+     * <code>null</code>将返回<code>false</code>，空字符串<code>""</code>将返回
+     * <code>true</code>。
      * </div>
      *
      * <pre>
@@ -362,7 +369,8 @@ public abstract class StringUtil {
         return true;
     }
 
-    // ------------------------------------------------------------------------ length
+    // ------------------------------------------------------------------------
+    // length
 
     /**
      * 检查字符串长度，null 返回 0
@@ -375,7 +383,8 @@ public abstract class StringUtil {
         return (s == null) ? 0 : s.toString().trim().length();
     }
 
-    // ------------------------------------------------------------------------ lastIndexOf
+    // ------------------------------------------------------------------------
+    // lastIndexOf
     public static int lastIndexOf(CharSequence path, char ch) {
         if (path == null) {
             return -1;
@@ -390,7 +399,8 @@ public abstract class StringUtil {
         try {
             return s == null ? null : s.toString().getBytes(encoding);
         } catch (UnsupportedEncodingException e) {
-            throw new IllegalArgumentException(String.format("Encoding (%s) is not supported by your JVM", encoding), e);
+            throw new IllegalArgumentException(String.format("Encoding (%s) is not supported by your JVM", encoding),
+                    e);
         }
     }
 
@@ -412,10 +422,10 @@ public abstract class StringUtil {
         try {
             return bytes == null ? null : new String(bytes, encoding);
         } catch (UnsupportedEncodingException e) {
-            throw new IllegalArgumentException(String.format("Encoding (%s) is not supported by your JVM", encoding), e);
+            throw new IllegalArgumentException(String.format("Encoding (%s) is not supported by your JVM", encoding),
+                    e);
         }
     }
-
 
     /**
      * 将 byte 以指定编码编码转换为字符串
@@ -532,7 +542,6 @@ public abstract class StringUtil {
         return sb;
     }
 
-
     /**
      * 检查字符串是否是空白：<code>null</code>、空字符串<code>""</code>或只有空白字符。
      *
@@ -601,7 +610,8 @@ public abstract class StringUtil {
      * 除去字符串头尾部的空白，如果字符串是<code>null</code>，依然返回<code>null</code>。
      *
      * <div>
-     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code> 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
+     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code>
+     * 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
      *
      * <pre>
      * StringUtil.trim(null)          = null
@@ -660,7 +670,8 @@ public abstract class StringUtil {
      * 除去字符串头部的空白，如果字符串是<code>null</code>，则返回<code>null</code>。
      *
      * <div>
-     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code> 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
+     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code>
+     * 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
      *
      * <pre>
      * StringUtil.trimStart(null)         = null
@@ -674,7 +685,8 @@ public abstract class StringUtil {
      * </div>
      *
      * @param str 要处理的字符串
-     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回 <code>null</code>
+     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回
+     *         <code>null</code>
      */
     public static String trimStart(String str) {
         return __trim(str, null, -1);
@@ -706,7 +718,8 @@ public abstract class StringUtil {
      * 除去字符串尾部的空白，如果字符串是<code>null</code>，则返回<code>null</code>。
      *
      * <div>
-     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code> 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
+     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code>
+     * 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
      *
      * <pre>
      * StringUtil.trimEnd(null)       = null
@@ -720,7 +733,8 @@ public abstract class StringUtil {
      * </div>
      *
      * @param str 要处理的字符串
-     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回 <code>null</code>
+     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回
+     *         <code>null</code>
      */
     public static String trimEnd(String str) {
         return __trim(str, null, 1);
@@ -752,7 +766,8 @@ public abstract class StringUtil {
      * 除去字符串头尾部的空白，如果结果字符串是空字符串<code>""</code>，则返回<code>null</code>。
      *
      * <div>
-     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code> 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
+     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code>
+     * 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
      *
      * <pre>
      * StringUtil.trimToNull(null)          = null
@@ -765,7 +780,8 @@ public abstract class StringUtil {
      * </div>
      *
      * @param str 要处理的字符串
-     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回 <code>null</code>
+     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回
+     *         <code>null</code>
      */
     public static String trimToNull(String str) {
         return trimToNull(str, null);
@@ -775,7 +791,8 @@ public abstract class StringUtil {
      * 除去字符串头尾部的空白，如果结果字符串是空字符串<code>""</code>，则返回<code>null</code>。
      *
      * <div>
-     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code> 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
+     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code>
+     * 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
      *
      * <pre>
      * StringUtil.trim(null, *)          = null
@@ -791,7 +808,8 @@ public abstract class StringUtil {
      *
      * @param str        要处理的字符串
      * @param stripChars 要除去的字符，如果为<code>null</code>表示除去空白字符
-     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回 <code>null</code>
+     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回
+     *         <code>null</code>
      */
     public static String trimToNull(String str, String stripChars) {
         String result = trim(str, stripChars);
@@ -803,12 +821,12 @@ public abstract class StringUtil {
         return result;
     }
 
-
     /**
      * 除去字符串头尾部的空白，如果字符串是<code>null</code>，则返回空字符串<code>""</code>。
      *
      * <div>
-     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code> 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
+     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code>
+     * 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
      *
      * <pre>
      * StringUtil.trimToEmpty(null)          = &quot;&quot;
@@ -821,7 +839,8 @@ public abstract class StringUtil {
      * </div>
      *
      * @param str 要处理的字符串
-     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回 <code>null</code>
+     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回
+     *         <code>null</code>
      */
     public static String trimToEmpty(String str) {
         return trimToEmpty(str, null);
@@ -831,7 +850,8 @@ public abstract class StringUtil {
      * 除去字符串头尾部的空白，如果字符串是<code>null</code>，则返回空字符串<code>""</code>。
      *
      * <div>
-     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code> 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
+     * 注意，和<code>String.trim</code>不同，此方法使用<code>Character.isWhitespace</code>
+     * 来判定空白， 因而可以除去英文字符集之外的其它空白，如中文空格。
      *
      * <pre>
      * StringUtil.trim(null, *)          = &quot;&quot;
@@ -846,7 +866,8 @@ public abstract class StringUtil {
      * </div>
      *
      * @param str 要处理的字符串
-     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回 <code>null</code>
+     * @return 除去空白的字符串，如果原字串为<code>null</code>或结果字符串为<code>""</code>，则返回
+     *         <code>null</code>
      */
     public static String trimToEmpty(String str, String stripChars) {
         String result = trim(str, stripChars);
@@ -873,7 +894,8 @@ public abstract class StringUtil {
      *
      * @param str        要处理的字符串
      * @param stripChars 要除去的字符，如果为<code>null</code>表示除去空白字符
-     * @param mode       <code>-1</code>表示trimStart，<code>0</code>表示trim全部， <code>1</code>表示trimEnd
+     * @param mode       <code>-1</code>表示trimStart，<code>0</code>表示trim全部，
+     *                   <code>1</code>表示trimEnd
      * @return 除去指定字符后的的字符串，如果原字串为<code>null</code>，则返回<code>null</code>
      */
     private static String __trim(String str, String stripChars, int mode) {
@@ -1489,7 +1511,8 @@ public abstract class StringUtil {
     }
 
     /**
-     * 在字符串中查找指定字符集合中的字符，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回 <code>-1</code>。 如果字符集合为<code>null</code>或空，也返回
+     * 在字符串中查找指定字符集合中的字符，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回 <code>-1</code>。
+     * 如果字符集合为<code>null</code>或空，也返回
      * <code>-1</code>。
      *
      * <pre>
@@ -1531,7 +1554,8 @@ public abstract class StringUtil {
     }
 
     /**
-     * 在字符串中查找指定字符集合中的字符，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回 <code>-1</code>。 如果字符集合为<code>null</code>或空，也返回
+     * 在字符串中查找指定字符集合中的字符，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回 <code>-1</code>。
+     * 如果字符集合为<code>null</code>或空，也返回
      * <code>-1</code>。
      *
      * <pre>
@@ -1575,8 +1599,10 @@ public abstract class StringUtil {
     }
 
     /**
-     * 在字符串中查找指定字符串集合中的字符串，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回 <code>-1</code>。 如果字符串集合为<code>null</code>或空，也返回
-     * <code>-1</code>。 如果字符串集合包括<code>""</code>，并且字符串不为<code>null</code>，则返回 <code>str.length()</code>
+     * 在字符串中查找指定字符串集合中的字符串，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回
+     * <code>-1</code>。 如果字符串集合为<code>null</code>或空，也返回
+     * <code>-1</code>。 如果字符串集合包括<code>""</code>，并且字符串不为<code>null</code>，则返回
+     * <code>str.length()</code>
      *
      * <pre>
      * StringUtil.indexOfAny(null, *)                     = -1
@@ -1635,7 +1661,8 @@ public abstract class StringUtil {
     }
 
     /**
-     * 在字符串中查找不在指定字符集合中的字符，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回 <code>-1</code>。 如果字符集合为<code>null</code>或空，也返回
+     * 在字符串中查找不在指定字符集合中的字符，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回
+     * <code>-1</code>。 如果字符集合为<code>null</code>或空，也返回
      * <code>-1</code>。
      *
      * <pre>
@@ -1657,8 +1684,7 @@ public abstract class StringUtil {
             return -1;
         }
 
-        outer:
-        for (int i = 0; i < str.length(); i++) {
+        outer: for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             for (char searchChar : searchChars) {
@@ -1674,7 +1700,8 @@ public abstract class StringUtil {
     }
 
     /**
-     * 在字符串中查找不在指定字符集合中的字符，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回 <code>-1</code>。 如果字符集合为<code>null</code>或空，也返回
+     * 在字符串中查找不在指定字符集合中的字符，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回
+     * <code>-1</code>。 如果字符集合为<code>null</code>或空，也返回
      * <code>-1</code>。
      *
      * <pre>
@@ -1805,8 +1832,10 @@ public abstract class StringUtil {
     }
 
     /**
-     * 从字符串尾部开始查找指定字符串集合中的字符串，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回 <code>-1</code>。 如果字符串集合为<code>null</code>
-     * 或空，也返回<code>-1</code>。 如果字符串集合包括<code>""</code>，并且字符串不为<code>null</code>，则返回 <code>str.length()</code>
+     * 从字符串尾部开始查找指定字符串集合中的字符串，并返回第一个匹配的起始索引。 如果字符串为<code>null</code>，则返回
+     * <code>-1</code>。 如果字符串集合为<code>null</code>
+     * 或空，也返回<code>-1</code>。 如果字符串集合包括<code>""</code>，并且字符串不为<code>null</code>，则返回
+     * <code>str.length()</code>
      *
      * <pre>
      * StringUtil.lastIndexOfAny(null, *)                   = -1
@@ -1898,7 +1927,8 @@ public abstract class StringUtil {
      * 检查字符串是是否只包含指定字符集合中的字符。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>false</code>。 如果字符集合为<code>null</code> 则返回<code>false</code>。 但是空字符串永远返回
+     * 如果字符串为<code>null</code>，则返回<code>false</code>。 如果字符集合为<code>null</code>
+     * 则返回<code>false</code>。 但是空字符串永远返回
      * <code>true</code>.
      * </div>
      *
@@ -1936,7 +1966,8 @@ public abstract class StringUtil {
      * 检查字符串是是否只包含指定字符集合中的字符。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>false</code>。 如果字符集合为<code>null</code> 则返回<code>false</code>。 但是空字符串永远返回
+     * 如果字符串为<code>null</code>，则返回<code>false</code>。 如果字符集合为<code>null</code>
+     * 则返回<code>false</code>。 但是空字符串永远返回
      * <code>true</code>.
      * </div>
      *
@@ -1966,7 +1997,8 @@ public abstract class StringUtil {
      * 检查字符串是是否不包含指定字符集合中的字符。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>false</code>。 如果字符集合为<code>null</code> 则返回<code>true</code>。 但是空字符串永远返回
+     * 如果字符串为<code>null</code>，则返回<code>false</code>。 如果字符集合为<code>null</code>
+     * 则返回<code>true</code>。 但是空字符串永远返回
      * <code>true</code>.
      * </div>
      *
@@ -2008,7 +2040,8 @@ public abstract class StringUtil {
      * 检查字符串是是否不包含指定字符集合中的字符。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>false</code>。 如果字符集合为<code>null</code> 则返回<code>true</code>。 但是空字符串永远返回
+     * 如果字符串为<code>null</code>，则返回<code>false</code>。 如果字符集合为<code>null</code>
+     * 则返回<code>true</code>。 但是空字符串永远返回
      * <code>true</code>.
      * </div>
      *
@@ -2071,7 +2104,6 @@ public abstract class StringUtil {
 
         return count;
     }
-
 
     /*
      * ========================================================================== ==
@@ -2295,7 +2327,8 @@ public abstract class StringUtil {
      * 取得第一个出现的分隔子串之前的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code> 或未找到该子串，则返回原字符串。
+     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code>
+     * 或未找到该子串，则返回原字符串。
      *
      * <pre>
      * StringUtil.substringBefore(null, *)      = null
@@ -2336,7 +2369,8 @@ public abstract class StringUtil {
      * 取得第一个出现的分隔子串之后的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code> 或未找到该子串，则返回原字符串。
+     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code>
+     * 或未找到该子串，则返回原字符串。
      *
      * <pre>
      * StringUtil.substringAfter(null, *)      = null
@@ -2377,7 +2411,8 @@ public abstract class StringUtil {
      * 取得最后一个的分隔子串之前的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code> 或未找到该子串，则返回原字符串。
+     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code>
+     * 或未找到该子串，则返回原字符串。
      *
      * <pre>
      * StringUtil.substringBeforeLast(null, *)      = null
@@ -2414,7 +2449,8 @@ public abstract class StringUtil {
      * 取得最后一个的分隔子串之后的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code> 或未找到该子串，则返回原字符串。
+     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code>
+     * 或未找到该子串，则返回原字符串。
      *
      * <pre>
      * StringUtil.substringAfterLast(null, *)      = null
@@ -2456,7 +2492,8 @@ public abstract class StringUtil {
      * 取得指定分隔符的前两次出现之间的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code> ，则返回<code>null</code>。
+     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code>
+     * ，则返回<code>null</code>。
      *
      * <pre>
      * StringUtil.substringBetween(null, *)            = null
@@ -2481,7 +2518,8 @@ public abstract class StringUtil {
      * 取得两个分隔符之间的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code> ，则返回<code>null</code>。
+     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code>
+     * ，则返回<code>null</code>。
      *
      * <pre>
      * StringUtil.substringBetween(null, *, *)          = null
@@ -2509,7 +2547,8 @@ public abstract class StringUtil {
      * 取得两个分隔符之间的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code> ，则返回<code>null</code>。
+     * 如果字符串为<code>null</code>，则返回<code>null</code>。 如果分隔子串为<code>null</code>
+     * ，则返回<code>null</code>。
      *
      * <pre>
      * StringUtil.substringBetween(null, *, *)          = null
@@ -2597,7 +2636,8 @@ public abstract class StringUtil {
      * 替换指定的子串，只替换第一个出现的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>则返回<code>null</code>，如果指定子串为<code>null</code> ，则返回原字符串。
+     * 如果字符串为<code>null</code>则返回<code>null</code>，如果指定子串为<code>null</code>
+     * ，则返回原字符串。
      *
      * <pre>
      * StringUtil.replaceOnce(null, *, *)        = null
@@ -2644,7 +2684,8 @@ public abstract class StringUtil {
      * 替换指定的子串，替换所有出现的子串。
      *
      * <div>
-     * 如果字符串为<code>null</code>则返回<code>null</code>，如果指定子串为<code>null</code> ，则返回原字符串。
+     * 如果字符串为<code>null</code>则返回<code>null</code>，如果指定子串为<code>null</code>
+     * ，则返回原字符串。
      *
      * <pre>
      * StringUtil.replace(null, *, *)        = null
@@ -2671,7 +2712,8 @@ public abstract class StringUtil {
      * 替换指定的子串，替换指定的次数。
      *
      * <div>
-     * 如果字符串为<code>null</code>则返回<code>null</code>，如果指定子串为<code>null</code> ，则返回原字符串。
+     * 如果字符串为<code>null</code>则返回<code>null</code>，如果指定子串为<code>null</code>
+     * ，则返回原字符串。
      *
      * <pre>
      * StringUtil.replace(null, *, *, *)         = null
@@ -2691,7 +2733,8 @@ public abstract class StringUtil {
      * @param text 要扫描的字符串
      * @param repl 要搜索的子串
      * @param with 替换字符串
-     * @param max  maximum number of values to replace, or <code>-1</code> if no maximum
+     * @param max  maximum number of values to replace, or <code>-1</code> if no
+     *             maximum
      * @return 被替换后的字符串，如果原始字符串为<code>null</code>，则返回<code>null</code>
      */
     public static String replace(String text, String repl, String with, int max) {
@@ -2789,11 +2832,14 @@ public abstract class StringUtil {
      * 将字符串中所有指定的字符，替换成另一个。
      *
      * <div>
-     * 如果字符串为<code>null</code>则返回<code>null</code>。如果搜索字符串为<code>null</code> 或空，则返回原字符串。
+     * 如果字符串为<code>null</code>则返回<code>null</code>。如果搜索字符串为<code>null</code>
+     * 或空，则返回原字符串。
      * </div>
      *
      * <div>
-     * 例如： <code>replaceChars(&quot;hello&quot;, &quot;ho&quot;, &quot;jy&quot;) = jelly</code> 。
+     * 例如：
+     * <code>replaceChars(&quot;hello&quot;, &quot;ho&quot;, &quot;jy&quot;) = jelly</code>
+     * 。
      * </div>
      *
      * <div>
@@ -2903,7 +2949,8 @@ public abstract class StringUtil {
      * 将指定的子串用另一指定子串覆盖。
      *
      * <div>
-     * 如果字符串为<code>null</code>，则返回<code>null</code>。 负的索引值将被看作<code>0</code> ，越界的索引值将被设置成字符串的长度相同的值。
+     * 如果字符串为<code>null</code>，则返回<code>null</code>。 负的索引值将被看作<code>0</code>
+     * ，越界的索引值将被设置成字符串的长度相同的值。
      *
      * <pre>
      * StringUtil.overlay(null, *, *, *)            = null
@@ -3113,8 +3160,8 @@ public abstract class StringUtil {
         }
 
         int arraySize = array.length;
-        int bufSize =
-                (arraySize == 0) ? 0 : ((((array[0] == null) ? 16 : array[0].toString().length()) + 1) * arraySize);
+        int bufSize = (arraySize == 0) ? 0
+                : ((((array[0] == null) ? 16 : array[0].toString().length()) + 1) * arraySize);
         StringBuilder buf = new StringBuilder(bufSize);
 
         for (int i = 0; i < arraySize; i++) {
@@ -3161,9 +3208,8 @@ public abstract class StringUtil {
         // ArraySize == 0: Len = 0
         // ArraySize > 0: Len = NofStrings *(len(firstString) + len(separator))
         // (估计大约所有的字符串都一样长)
-        int bufSize =
-                arraySize == 0 ? 0
-                        : arraySize * ((array[0] == null ? 16 : array[0].toString().length()) + separator
+        int bufSize = arraySize == 0 ? 0
+                : arraySize * ((array[0] == null ? 16 : array[0].toString().length()) + separator
                         .length());
 
         StringBuilder buf = new StringBuilder(bufSize);
@@ -3259,7 +3305,6 @@ public abstract class StringUtil {
         return buf.toString();
     }
 
-
     /*
      * ========================================================================== ==
      */
@@ -3269,7 +3314,8 @@ public abstract class StringUtil {
      */
 
     /**
-     * 将字符串转换成指定长度的缩略，例如： 将"Now is the time for all good men"转换成"Now is the time for..."。
+     * 将字符串转换成指定长度的缩略，例如： 将"Now is the time for all good men"转换成"Now is the time
+     * for..."。
      *
      * <ul>
      * <li>
@@ -3277,7 +3323,8 @@ public abstract class StringUtil {
      * <li>
      * 否则将它转换成缩略：<code>substring(str, 0, max-3) + "..."</code>；</li>
      * <li>
-     * 如果<code>maxWidth</code>小于<code>4</code>抛出 <code>IllegalArgumentException</code>；</li>
+     * 如果<code>maxWidth</code>小于<code>4</code>抛出
+     * <code>IllegalArgumentException</code>；</li>
      * <li>
      * 返回的字符串不可能长于指定的<code>maxWidth</code>。</li>
      * </ul>
@@ -3301,10 +3348,12 @@ public abstract class StringUtil {
     }
 
     /**
-     * 将字符串转换成指定长度的缩略，例如： 将"Now is the time for all good men"转换成"...is the time for..."。
+     * 将字符串转换成指定长度的缩略，例如： 将"Now is the time for all good men"转换成"...is the time
+     * for..."。
      *
      * <div>
-     * 和<code>abbreviate(String, int)</code>类似，但是增加了一个“左边界”偏移量。 注意，“左边界”处的字符未必出现在结果字符串的最左边，但一定出现在结果字符串中。
+     * 和<code>abbreviate(String, int)</code>类似，但是增加了一个“左边界”偏移量。
+     * 注意，“左边界”处的字符未必出现在结果字符串的最左边，但一定出现在结果字符串中。
      * </div>
      *
      * <div>
@@ -3458,7 +3507,8 @@ public abstract class StringUtil {
      * 取得两个字符串的相似度，<code>0</code>代表字符串相等，数字越大表示字符串越不像。
      *
      * <div>
-     * 这个算法取自<a href="http://www.merriampark.com/ld.htm">http://www.merriampark.com /ld.htm</a>。
+     * 这个算法取自<a href="http://www.merriampark.com/ld.htm">http://www.merriampark.com
+     * /ld.htm</a>。
      * 它计算的是从字符串1转变到字符串2所需要的删除、插入和替换的步骤数。
      * </div>
      *
@@ -3602,6 +3652,7 @@ public abstract class StringUtil {
      * StringUtil.toCamelCase("aBc def_ghi") = "aBcDefGhi"
      * StringUtil.toCamelCase("aBc def_ghi 123") = "aBcDefGhi123"
      * </pre>
+     * 
      * <br>
      * </div>
      * <div>
@@ -3660,6 +3711,7 @@ public abstract class StringUtil {
      * 将字符串转换成pascal case。
      * <div>
      * 如果字符串是<code>null</code>则返回<code>null</code>。
+     * 
      * <pre>
      * StringUtil.toPascalCase(null)  = null
      * StringUtil.toPascalCase("")    = ""
@@ -3668,6 +3720,7 @@ public abstract class StringUtil {
      * StringUtil.toPascalCase("aBc def_ghi") = "ABcDefGhi"
      * StringUtil.toPascalCase("aBc def_ghi 123") = "aBcDefGhi123"
      * </pre>
+     * 
      * <br>
      * 此方法会保留除了下划线和空白以外的所有分隔符。
      * </div>
@@ -3731,6 +3784,7 @@ public abstract class StringUtil {
      * StringUtil.toUpperCaseWithUnderscores("aBc def_ghi 123") = "A_BC_DEF_GHI_123"
      * StringUtil.toUpperCaseWithUnderscores("__a__Bc__") = "__A__BC__"
      * </pre>
+     * 
      * <br>
      * </div>
      * <div>
@@ -3802,6 +3856,7 @@ public abstract class StringUtil {
      * StringUtil.toLowerCaseWithUnderscores("aBc def_ghi 123") = "a_bc_def_ghi_123"
      * StringUtil.toLowerCaseWithUnderscores("__a__Bc__") = "__a__bc__"
      * </pre>
+     * 
      * <br>
      * </div>
      * <div>

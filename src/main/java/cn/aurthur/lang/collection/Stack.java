@@ -1,14 +1,15 @@
 package cn.aurthur.lang.collection;
 
-import com.bqteam.basetool.sdk.core.lang.able.CloneableObject;
-import com.bqteam.basetool.sdk.core.utils.CollectionUtil;
+import cn.aurthur.lang.able.CloneableObject;
+import cn.aurthur.utils.CollectionUtil;
 
 import java.io.Serializable;
 import java.util.EmptyStackException;
 import java.util.LinkedList;
 
 /**
- * 从<code>LinkedList</code>继承的stack，避免<code>java.util.Stack</code> 中synchronized的代价。
+ * 从<code>LinkedList</code>继承的stack，避免<code>java.util.Stack</code>
+ * 中synchronized的代价。
  */
 public class Stack<T> implements Serializable, CloneableObject<Stack<T>> {
 

@@ -1,6 +1,6 @@
 package cn.aurthur.utils;
 
-import com.bqteam.basetool.sdk.core.exception.IllegalPathException;
+import cn.aurthur.exception.IllegalPathException;
 
 import java.io.*;
 import java.net.URL;
@@ -52,7 +52,6 @@ public abstract class FileUtil {
      * <code>WINDOWS</code>文件路径分隔符
      */
     private static final char WINDOWS_SEPARATOR = '\\';
-
 
     /**
      * 判断文件是否存在，如果<code>path</code>为<code>null</code>，则返回<code>false</code>
@@ -449,8 +448,8 @@ public abstract class FileUtil {
      *
      * @param fileName 文件路径
      * @return 文件大小（字节数），如果文件路径为空或者文件路径不存在 ,
-     * <br>
-     * 则返回<code>0</code>
+     *         <br>
+     *         则返回<code>0</code>
      */
     public static int getFileSize(String fileName) throws IOException {
         if (StringUtil.isBlank(fileName)) {
@@ -476,7 +475,8 @@ public abstract class FileUtil {
      * 创建文件，不管文件层级，均可创建
      *
      * @param path 文件路径
-     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code> ,则返回<code>false</code>
+     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code>
+     *         ,则返回<code>false</code>
      * @throws IOException
      */
     public static boolean createFile(String path) throws IOException {
@@ -488,7 +488,8 @@ public abstract class FileUtil {
      *
      * @param path     文件路径
      * @param override 是否覆盖
-     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code> ,则返回<code>false</code>
+     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code>
+     *         ,则返回<code>false</code>
      * @throws IOException
      */
     public static boolean createFile(String path, boolean override) throws IOException {
@@ -519,7 +520,8 @@ public abstract class FileUtil {
      *
      * @param path     文件路径
      * @param override 是否覆盖
-     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code> ,则返回<code>false</code>
+     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code>
+     *         ,则返回<code>false</code>
      */
     public static boolean createDir(String path, boolean override) {
         if (path == null) {
@@ -538,7 +540,8 @@ public abstract class FileUtil {
      * 创建文件夹，不管文件层级，均可创建
      *
      * @param path 文件路径
-     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code> ,则返回<code>false</code>
+     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code>
+     *         ,则返回<code>false</code>
      */
     public static boolean createDir(String path) {
         return createDir(path, false);
@@ -548,7 +551,8 @@ public abstract class FileUtil {
      * 创建文件路径的父文件夹，不管文件层级，均可创建
      *
      * @param path 文件路径
-     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code> ,则返回<code>false</code>
+     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code>
+     *         ,则返回<code>false</code>
      */
     public static boolean createParentDir(String path) {
         return createParentDir(path, false);
@@ -563,7 +567,8 @@ public abstract class FileUtil {
      *
      * @param path     文件路径
      * @param override 是否覆盖
-     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code> ,则返回<code>false</code>
+     * @return 是否创建成功，如果<code>path</code>为空或者<code>path</code>为<code>null</code>
+     *         ,则返回<code>false</code>
      */
     public static boolean createParentDir(String path, boolean override) {
         if (path == null) {
@@ -823,6 +828,7 @@ public abstract class FileUtil {
      * a/b/c/    --> ""
      * }
      * </pre>
+     * 
      * <br>
      *
      * @param filename 文件名
@@ -886,7 +892,7 @@ public abstract class FileUtil {
     public static String[] parseExtension(String path) {
         path = StringUtil.trimToEmpty(path);
 
-        String[] parts = {path, null};
+        String[] parts = { path, null };
 
         if (EmptyUtil.isEmpty(path)) {
             return parts;
@@ -922,7 +928,8 @@ public abstract class FileUtil {
             "(file:/*[a-z]:)|(\\w+://.+?/)|((jar|zip):.+!/)|(\\w+:)", Pattern.CASE_INSENSITIVE);
 
     /**
-     * 根据指定url和相对路径，计算出相对路径所对应的完整url。类似于<code>URI.resolve()</code> 方法，然后后者不能正确处理jar类型的URL。
+     * 根据指定url和相对路径，计算出相对路径所对应的完整url。类似于<code>URI.resolve()</code>
+     * 方法，然后后者不能正确处理jar类型的URL。
      */
     public static String resolve(String url, String relativePath) {
         url = StringUtil.trimToEmpty(url);
@@ -1065,7 +1072,8 @@ public abstract class FileUtil {
      * <li>
      * 对于绝对路径，如果".."上朔的路径超过了根目录，则看作非法路径，返回<code>null</code>。</li>
      * <li>
-     * 对于Windows系统，有些路径有特殊的前缀，如驱动器名"c:"和UNC名"//hostname"，对于这些路径，保留其前缀， 并对其后的路径部分适用上述所有规则。</li>
+     * 对于Windows系统，有些路径有特殊的前缀，如驱动器名"c:"和UNC名"//hostname"，对于这些路径，保留其前缀，
+     * 并对其后的路径部分适用上述所有规则。</li>
      * <li>
      * Windows驱动器名被转换成大写，如"c:"转换成"C:"。</li>
      * </ol>
@@ -1195,7 +1203,7 @@ public abstract class FileUtil {
     }
 
     private static String normalizePath(String path, boolean forceAbsolute, boolean forceRelative,
-                                        boolean removeTrailingSlash) throws IllegalPathException {
+            boolean removeTrailingSlash) throws IllegalPathException {
         char[] pathChars = StringUtil.trimToEmpty(path).toCharArray();
         int length = pathChars.length;
 

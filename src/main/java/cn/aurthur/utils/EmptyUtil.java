@@ -1,6 +1,6 @@
 package cn.aurthur.utils;
 
-import com.bqteam.basetool.sdk.core.lang.pool.EmptyPool;
+import cn.aurthur.lang.pool.EmptyPool;
 
 import java.io.File;
 import java.util.*;
@@ -36,7 +36,8 @@ public abstract class EmptyUtil {
      * @return true or false
      */
     public static boolean isEmptyStr(String str) {
-        return str == null || str.equals(EmptyPool.EMPTY_STRING) || str.trim().equals(EmptyPool.EMPTY_STRING) || str.length() == 0;
+        return str == null || str.equals(EmptyPool.EMPTY_STRING) || str.trim().equals(EmptyPool.EMPTY_STRING)
+                || str.length() == 0;
     }
 
     /**

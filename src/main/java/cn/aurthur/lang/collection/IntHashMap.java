@@ -1,6 +1,6 @@
 package cn.aurthur.lang.collection;
 
-import com.bqteam.basetool.sdk.core.lang.pool.EmptyPool;
+import cn.aurthur.lang.pool.EmptyPool;
 
 /**
  * 使用整数作为key的hash表。
@@ -126,7 +126,7 @@ public class IntHashMap<T> {
 
         boolean valueIsNull = value == null;
 
-        for (int i = tab.length; i-- > 0; ) {
+        for (int i = tab.length; i-- > 0;) {
             for (Entry<T> e = tab[i]; e != null; e = e.next) {
                 if (valueIsNull ? e.value == null : value.equals(e.value)) {
                     return true;
@@ -231,7 +231,7 @@ public class IntHashMap<T> {
     public void clear() {
         Entry<T>[] tab = table;
 
-        for (int index = tab.length; --index >= 0; ) {
+        for (int index = tab.length; --index >= 0;) {
             tab[index] = null;
         }
 
@@ -302,8 +302,8 @@ public class IntHashMap<T> {
         threshold = (int) (newCapacity * loadFactor);
         table = newMap;
 
-        for (int i = oldCapacity; i-- > 0; ) {
-            for (Entry<T> old = oldMap[i]; old != null; ) {
+        for (int i = oldCapacity; i-- > 0;) {
+            for (Entry<T> old = oldMap[i]; old != null;) {
                 Entry<T> e = old;
 
                 old = old.next;

@@ -1,7 +1,6 @@
 package cn.aurthur.utils;
 
-
-import com.bqteam.basetool.sdk.core.lang.pool.StringPool;
+import cn.aurthur.lang.pool.StringPool;
 
 public abstract class IPUtil {
     public IPUtil() {

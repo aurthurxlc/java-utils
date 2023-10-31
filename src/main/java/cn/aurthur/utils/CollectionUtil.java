@@ -1,7 +1,7 @@
 package cn.aurthur.utils;
 
-import com.bqteam.basetool.sdk.core.lang.able.Keyable;
-import com.bqteam.basetool.sdk.core.lang.collection.ArrayHashMap;
+import cn.aurthur.lang.able.Keyable;
+import cn.aurthur.lang.collection.ArrayHashMap;
 
 import java.lang.reflect.Field;
 import java.util.*;
@@ -73,7 +73,8 @@ public abstract class CollectionUtil {
     /**
      * 创建一个<code>List</code>。
      * <div>
-     * 和{@code createArrayList(args)}不同，本方法会返回一个不可变长度的列表，且性能高于 {@code createArrayList(args)}。
+     * 和{@code createArrayList(args)}不同，本方法会返回一个不可变长度的列表，且性能高于
+     * {@code createArrayList(args)}。
      * </div>
      */
     public static <T> List<T> asList(T... args) {
@@ -216,7 +217,6 @@ public abstract class CollectionUtil {
 
         return list;
     }
-
 
     // ==========================================================================
     // 创建HashSet实例
@@ -403,7 +403,6 @@ public abstract class CollectionUtil {
         return new TreeSet<>(set);
     }
 
-
     // ==========================================================================
     // 创建HashMap实例
     // ==========================================================================
@@ -459,7 +458,6 @@ public abstract class CollectionUtil {
     public static <K, V> HashMap<K, V> createHashMap(Map<? extends K, ? extends V> map) {
         return new HashMap<>(map);
     }
-
 
     // ==========================================================================
     // 创建LinkedHashMap实例
@@ -785,7 +783,6 @@ public abstract class CollectionUtil {
     // 创建EnumMap实例
     // ==========================================================================
 
-
     /**
      * 创建<code>EnumMap</code>实例
      *
@@ -1018,7 +1015,8 @@ public abstract class CollectionUtil {
      * @param map 排序的映射表 @see SortedMap
      * @return <code>ConcurrentSkipListMap</code>实例
      */
-    public static <K, V> ConcurrentSkipListMap<K, V> createConcurrentSkipListMap(SortedMap<? extends K, ? extends V> map) {
+    public static <K, V> ConcurrentSkipListMap<K, V> createConcurrentSkipListMap(
+            SortedMap<? extends K, ? extends V> map) {
         if (map == null) {
             return new ConcurrentSkipListMap<>();
         }
@@ -1245,7 +1243,7 @@ public abstract class CollectionUtil {
      * 集合合并
      */
     public static <T extends Keyable<K>, K, O extends Keyable<K>> void merge(List<T> list, Map<K, O> map,
-                                                                             String... fields) {
+            String... fields) {
         if (EmptyUtil.isEmpty(list) || EmptyUtil.isEmpty(map) || EmptyUtil.isEmpty(fields)) {
             return;
         }
@@ -1267,7 +1265,7 @@ public abstract class CollectionUtil {
      * 集合合并
      */
     public static <T extends Keyable<K>, K, O extends Keyable<K>> void merge(List<T> list, Map<K, O> map,
-                                                                             Field... fields) {
+            Field... fields) {
         if (EmptyUtil.isEmpty(list) || EmptyUtil.isEmpty(map) || EmptyUtil.isEmpty(fields)) {
             return;
         }
@@ -1289,7 +1287,7 @@ public abstract class CollectionUtil {
      * 集合合并
      */
     public static <T extends Keyable<K>, K, O extends Keyable<K>> void merge(Class<T> clazz, List<T> list,
-                                                                             Map<K, O> map, Field... fields) {
+            Map<K, O> map, Field... fields) {
         if (EmptyUtil.isEmpty(list) || EmptyUtil.isEmpty(map) || EmptyUtil.isEmpty(fields) || clazz == null) {
             return;
         }

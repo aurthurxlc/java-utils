@@ -1,7 +1,7 @@
 package cn.aurthur.utils;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
 
 /**
  * 用于包含父子关系的 List 和树之间的转换
@@ -21,20 +21,20 @@ public class TreeUtil {
     public static JSONArray listToTree(JSONArray list, String id, String pid, String childNodeKey) {
         JSONArray r = new JSONArray();
         JSONObject hash = new JSONObject();
-        //将数组转为Object的形式，key为数组中的id
+        // 将数组转为Object的形式，key为数组中的id
         for (Object value : list) {
             JSONObject json = (JSONObject) value;
             hash.put(json.getString(id), json);
         }
-        //遍历结果集
+        // 遍历结果集
         for (Object o : list) {
-            //单条记录
+            // 单条记录
             JSONObject aVal = (JSONObject) o;
-            //在hash中取出key为单条记录中pid的值
+            // 在hash中取出key为单条记录中pid的值
             JSONObject hashVP = (JSONObject) hash.get(aVal.get(pid).toString());
-            //如果记录的pid存在，则说明它有父节点，将它添加到孩子节点的集合中
+            // 如果记录的pid存在，则说明它有父节点，将它添加到孩子节点的集合中
             if (hashVP != null) {
-                //检查是否有child属性
+                // 检查是否有child属性
                 if (hashVP.get(childNodeKey) != null) {
                     JSONArray ch = (JSONArray) hashVP.get(childNodeKey);
                     ch.add(aVal);

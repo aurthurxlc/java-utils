@@ -1,7 +1,6 @@
 package cn.aurthur.utils;
 
-import com.bqteam.basetool.sdk.core.exception.CheckedFailedException;
-
+import cn.aurthur.exception.CheckedFailedException;
 
 /**
  * 断言<br>
@@ -19,7 +18,8 @@ public abstract class AssertUtil {
     public AssertUtil() {
         throw new AssertionError("工具类不允许实例化");
     }
-// ---------------------------------------------------------------------------------------------------- notNull
+    // ----------------------------------------------------------------------------------------------------
+    // notNull
 
     /**
      * 确保对象不为空，否则抛出<code>CheckedFailedException</code>。
@@ -58,7 +58,8 @@ public abstract class AssertUtil {
         return object;
     }
 
-    // ---------------------------------------------------------------------------------------------------- isNull
+    // ----------------------------------------------------------------------------------------------------
+    // isNull
 
     /**
      * 确保对象为空，否则抛出<code>CheckedFailedException</code>。
@@ -97,7 +98,8 @@ public abstract class AssertUtil {
         return null;
     }
 
-    // ---------------------------------------------------------------------------------------------------- isTrue
+    // ----------------------------------------------------------------------------------------------------
+    // isTrue
 
     /**
      * 确保对象为空，否则抛出<code>CheckedFailedException</code>。
@@ -136,7 +138,8 @@ public abstract class AssertUtil {
         return true;
     }
 
-    // ---------------------------------------------------------------------------------------------------- isFalse
+    // ----------------------------------------------------------------------------------------------------
+    // isFalse
 
     /**
      * 确保对象为空，否则抛出<code>CheckedFailedException</code>。

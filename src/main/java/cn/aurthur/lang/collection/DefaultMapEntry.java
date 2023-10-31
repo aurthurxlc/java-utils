@@ -1,6 +1,6 @@
 package cn.aurthur.lang.collection;
 
-import com.bqteam.basetool.sdk.core.utils.ObjectUtil;
+import cn.aurthur.utils.ObjectUtil;
 
 import java.util.Map;
 
@@ -11,7 +11,8 @@ import java.util.Map;
  * <ul>
  * <li>支持值为<code>null</code>的key</li>
  * <li>可以和任意<code>Map.Entry</code>的实现进行<code>equals</code>比较</li>
- * <li>如果两个<code>Map.Entry</code>相同(<code>e1.equals(e2) == true</code>), 则它们的 <code>hashCode()</code>也相等</li>
+ * <li>如果两个<code>Map.Entry</code>相同(<code>e1.equals(e2) == true</code>), 则它们的
+ * <code>hashCode()</code>也相等</li>
  * </ul>
  *
  * @param <K>
@@ -24,7 +25,7 @@ public class DefaultMapEntry<K, V> implements Map.Entry<K, V> {
     /**
      * 创建一个<code>Map.Entry</code>.
      *
-     * @param key <code>Map.Entry</code>的key
+     * @param key   <code>Map.Entry</code>的key
      * @param value <code>Map.Entry</code>的value
      */
     public DefaultMapEntry(K key, V value) {

@@ -1,6 +1,6 @@
 package cn.aurthur.utils;
 
-import com.bqteam.basetool.sdk.core.lang.pool.EmptyPool;
+import cn.aurthur.lang.pool.EmptyPool;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -115,7 +115,7 @@ public abstract class PackageUtil {
      * @throws IOException
      */
     private static void __findClassesInJarPackage(URL url, String packageName, List<String> included,
-                                                  List<String> excluded, String packageDirName, final boolean recursive, List<String> classes)
+            List<String> excluded, String packageDirName, final boolean recursive, List<String> classes)
             throws IOException {
         JarFile jar = ((JarURLConnection) url.openConnection()).getJarFile();
 
@@ -155,7 +155,7 @@ public abstract class PackageUtil {
      * @param classes     存储类的资源列表
      */
     private static void __findClassesInDirPackage(String packageName, List<String> included, List<String> excluded,
-                                                  String packagePath, final boolean recursive, List<String> classes) {
+            String packagePath, final boolean recursive, List<String> classes) {
         File dir = new File(packagePath);
         if (!dir.exists() || !dir.isDirectory()) {
             return;
@@ -169,7 +169,8 @@ public abstract class PackageUtil {
 
         for (File file : dirfiles) {
             if (file.isDirectory()) {
-                __findClassesInDirPackage(packageName + "." + file.getName(), included, excluded, file.getAbsolutePath(),
+                __findClassesInDirPackage(packageName + "." + file.getName(), included, excluded,
+                        file.getAbsolutePath(),
                         recursive, classes);
                 continue;
             }
@@ -189,8 +190,9 @@ public abstract class PackageUtil {
      * @param excluded    排除的类列表
      * @param classes     存储类的列表
      */
-    private static void __filterClass(String packageName, String className, List<String> included, List<String> excluded,
-                                      List<String> classes) {
+    private static void __filterClass(String packageName, String className, List<String> included,
+            List<String> excluded,
+            List<String> classes) {
         if (__isIncluded(className, included, excluded)) {
             classes.add(packageName + '.' + className);
         }
@@ -206,8 +208,9 @@ public abstract class PackageUtil {
      * @param resources      存储资源的列表
      * @throws IOException
      */
-    private static void __findResourceInJarPackage(URL url, String packageName, String packageDirName, boolean recursive,
-                                                   List<String> resources) throws IOException {
+    private static void __findResourceInJarPackage(URL url, String packageName, String packageDirName,
+            boolean recursive,
+            List<String> resources) throws IOException {
         JarFile jar = ((JarURLConnection) url.openConnection()).getJarFile();
 
         Enumeration<JarEntry> entries = jar.entries();
@@ -276,7 +279,8 @@ public abstract class PackageUtil {
     }
 
     /**
-     * 是否包含名称，如果<code>included</code>和<code>excluded</code>列表均为“空”，返回 <code>true</code>
+     * 是否包含名称，如果<code>included</code>和<code>excluded</code>列表均为“空”，返回
+     * <code>true</code>
      *
      * @param name     需要包含的名称
      * @param included 需要验证的包含的正则表达式列表
